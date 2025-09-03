@@ -1,0 +1,94 @@
+my-nextjs-app/
+├── app/                          # App Router (Next.js 13+)
+│   ├── (auth)/                   # Route Groups
+│   │   ├── login/
+│   │   └── register/
+│   ├── (dashboard)/
+│   │   ├── analytics/
+│   │   └── settings/
+│   ├── api/                      # API Routes
+│   │   ├── auth/
+│   │   ├── users/
+│   │   └── products/
+│   ├── globals.css
+│   ├── layout.tsx                # Root Layout
+│   ├── loading.tsx               # Global Loading UI
+│   ├── error.tsx                 # Global Error UI
+│   ├── not-found.tsx            # 404 Page
+│   ├── page.tsx                 # Home Page
+│   ├── sitemap.ts               # SEO: Dynamic Sitemap
+│   ├── robots.ts                # SEO: Robots.txt
+│   ├── manifest.ts              # PWA Manifest
+│   └── opengraph-image.tsx      # SEO: OG Images
+├── components/                   # Reusable Components
+│   ├── ui/                      # Base UI Components
+│   │   ├── button.tsx
+│   │   ├── input.tsx
+│   │   └── modal.tsx
+│   ├── forms/                   # Form Components
+│   ├── layout/                  # Layout Components
+│   │   ├── header.tsx
+│   │   ├── footer.tsx
+│   │   └── sidebar.tsx
+│   └── features/                # Feature-specific Components
+├── lib/                         # Utilities & Configurations
+│   ├── auth.ts                  # Authentication Logic
+│   ├── db.ts                    # Database Connection
+│   ├── utils.ts                 # Helper Functions
+│   ├── validations.ts           # Zod Schemas
+│   ├── constants.ts             # App Constants
+│   └── types.ts                 # TypeScript Types
+├── hooks/                       # Custom React Hooks
+│   ├── use-auth.ts
+│   ├── use-local-storage.ts
+│   └── use-debounce.ts
+├── actions/                     # Server Actions
+│   ├── auth-actions.ts
+│   ├── user-actions.ts
+│   └── product-actions.ts
+├── middleware.ts                # Next.js Middleware
+├── next.config.ts               # TypeScript Config (New in 15)
+├── instrumentation.ts           # Server Lifecycle (Stable in 15)
+└── package.json
+
+
+
+or this structure 
+src/
+├─ app/
+│  ├─ layout.tsx
+│  ├─ page.tsx
+│  ├─ library/
+│  │  ├─ layout.tsx
+│  │  └─ books/
+│  │     ├─ page.tsx             # Server component -> fetch initial books
+│  │     └─ (routes for modal)   # optional: intercepting/parallel
+├─ modules/
+│  └─ books/
+│     ├─ components/
+│     │  └─ BookCard.tsx
+│     ├─ features/
+│     │  ├─ booksBoard/
+│     │  │  ├─ BooksBoard.tsx
+│     │  │  ├─ useBooksBoard.ts
+│     │  │  └─ BooksGrid.tsx
+│     │  ├─ addOrUpdateBook/
+│     │  │  ├─ AddOrUpdateBook.tsx
+│     │  │  └─ useAddOrUpdateBook.ts
+│     │  └─ bookDetails/
+│     │     ├─ BookPopup.tsx
+│     │     ├─ BookRating.tsx
+│     │     ├─ useBookDetails.ts
+│     │     └─ bookDetails.types.ts
+│     ├─ hooks/
+│     │  └─ useBooksSearch.ts
+│     ├─ services/
+│     │  └─ booksApi.ts
+│     ├─ types/
+│     │  └─ book.ts
+│     └─ utils/
+│        └─ bookHelpers.ts
+├─ lib/
+│  └─ fetchClient.ts
+└─ styles/
+   └─ globals.css

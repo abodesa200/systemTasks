@@ -20,7 +20,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("dark");
   const [mounted, setMounted] = useState(false);
 
-  // مزامنة الثيم مع الكوكيز عند تحميل الكلاينت
   useEffect(() => {
     const cookieTheme = document.cookie
       .split("; ")

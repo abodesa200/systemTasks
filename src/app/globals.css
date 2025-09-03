@@ -120,3 +120,29 @@
     @apply bg-background text-foreground;
   }
 }
+
+::-webkit-scrollbar {
+  width: 10px; /* عرض scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #18181b; /* لون المسار */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: oklch(1 0 0 / 10%); /* لون المقبض */
+  border-radius: 10px;
+  border: 2px solid #f0f0f0;
+}
+::-webkit-scrollbar-button {
+  display: none; /* يشيل الأسهم */
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: oklch(1 0 0 / 10%);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: oklch(1 0 0 / 20%) #18181b;
+}
