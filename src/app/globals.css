@@ -94,7 +94,7 @@
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
+  --border: rgba(255, 255, 255, 0.1);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.488 0.243 264.376);
@@ -145,4 +145,33 @@
 * {
   scrollbar-width: thin;
   scrollbar-color: oklch(1 0 0 / 20%) #18181b;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: currentColor !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* تنسيقات مخصصة للوضع الداكن */
+@media (prefers-color-scheme: dark) {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-text-fill-color: #e2e8f0 !important; 
+  }
+}
+
+input:autofill {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+  color: inherit !important;
 }

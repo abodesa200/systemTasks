@@ -1,17 +1,17 @@
 "use client";
 import React, { useState } from "react";
-import { Separator } from "../ui/separator";
+import { Separator } from "@/components/ui/separator";
 import { Download, Settings, Trash2, Eye, EyeOff } from "lucide-react";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from "@/components/ui/card";
 
 const AccountSeting = () => {
   const [passwordData, setPasswordData] = useState({

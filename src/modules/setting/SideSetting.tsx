@@ -1,6 +1,6 @@
 import { Bell, CreditCard, Palette, Settings, User } from "lucide-react";
 import React from "react";
-import { Card, CardContent } from "../ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface SideSettingProps {
   activeTab: string;

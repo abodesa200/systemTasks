@@ -6,14 +6,12 @@ export async function GET(req: Request) {
     try {
       const user = await getCurrentUser(req);
       if (!user) {
-        console.log("No user found in JWT");
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
       }
   
-      console.log("User ID:", user.id, "Type:", typeof user.id);
   
       const profile = await prisma.user.findUnique({
-        where: { id: Number(user.id) }, // تحويل إلى رقم إذا لزم الأمر
+        where: { id: Number(user.id) }, 
         select: {
           id: true,
           name: true,
@@ -29,7 +27,6 @@ export async function GET(req: Request) {
       });
   
       if (!profile) {
-        console.log("User not found in DB for id:", user.id);
         return NextResponse.json({ error: "User not found" }, { status: 404 });
       }
   

@@ -161,7 +161,7 @@ export const TasksGrid = React.memo(
     );
 
     const handleArchive = useCallback((taskId: string) => {
-      console.log("Archive task:", taskId);
+      // console.log("Archive task:", taskId);
     }, []);
 
     const stats = calculateColumnStats(column.tasks);

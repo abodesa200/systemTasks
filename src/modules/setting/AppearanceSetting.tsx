@@ -1,23 +1,23 @@
 "use client";
 import { Palette, Monitor, Moon, Sun, Languages } from "lucide-react";
 import { useState } from "react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../ui/card";
-import { Label } from "../ui/label";
+} from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
-import { Separator } from "../ui/separator";
+} from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
 
 const AppearanceSetting = () => {
   const [appearance, setAppearance] = useState({

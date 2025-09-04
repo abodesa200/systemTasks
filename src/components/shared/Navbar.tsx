@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 import type React from "react";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import WorkTimer from "../components/shared/WorkTimer";
+import WorkTimer from "./WorkTimer";
 
 const Navbar: React.FC = () => {
   const [currentTime, setCurrentTime] = useState(new Date());

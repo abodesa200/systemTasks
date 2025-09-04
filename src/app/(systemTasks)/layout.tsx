@@ -1,5 +1,5 @@
-import Navbar from "@/modules/Navbar";
-import { Sidebar } from "@/modules/Sidebar";
+import Navbar from "@/components/shared/Navbar";
+import { Sidebar } from "@/components/shared/Sidebar";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title: {
@@ -32,32 +32,3 @@ export default function DashboardLayout({
     </div>
   );
 }
-
-
-// "use client";
-
-// import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
-// import { AppSidebar } from "@/modules/AppSidebar";
-// import Navbar from "@/modules/Navbar";
-
-// export default function DashboardLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-//   return (
-//     <SidebarProvider>
-//       {/* الـ Sidebar عاليسار */}
-//       <AppSidebar />
-
-//       {/* المساحة الباقية */}
-//       <SidebarInset>
-//         {/* الـ Navbar بيضل فوق */}
-//         <Navbar />
-
-//         {/* المحتوى قابل للسكرول */}
-//         <main className="flex-1 overflow-y-auto p-6">{children}</main>
-//       </SidebarInset>
-//     </SidebarProvider>
-//   );
-// }

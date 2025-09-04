@@ -6,11 +6,11 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from "@/components/ui/card";
 import { Bell, Save } from "lucide-react";
-import { Label } from "../ui/label";
-import { Switch } from "../ui/switch";
-import { Button } from "../ui/button";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
+import { Button } from "@/components/ui/button";
 
 const NotificationsSetting = () => {
   const [notifications, setNotifications] = useState({

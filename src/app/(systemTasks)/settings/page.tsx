@@ -7,7 +7,7 @@ import NotificationsSetting from "@/modules/setting/NotificationsSetting";
 import ProfileSetting from "@/modules/setting/ProfileSetting";
 import SideSetting from "@/modules/setting/SideSetting";
 import { Settings } from "lucide-react";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState("profile");
@@ -21,26 +21,28 @@ export default function SettingsPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* القائمة الجانبية */}
-          <SideSetting activeTab={activeTab} setActiveTab={setActiveTab} />
+        
+          <Suspense fallback={<div>Loading...</div>}>
+            <SideSetting activeTab={activeTab} setActiveTab={setActiveTab} />
+          </Suspense>
+          <Suspense fallback={<div>Loading...</div>}>
+            <div className="lg:col-span-3">
+              {/* الملف الشخصي */}
+              {activeTab === "profile" && <ProfileSetting />}
 
-          {/* المحتوى الرئيسي */}
-          <div className="lg:col-span-3">
-            {/* الملف الشخصي */}
-            {activeTab === "profile" && <ProfileSetting />}
+              {/* إعدادات الحساب */}
+              {activeTab === "account" && <AccountSeting />}
 
-            {/* إعدادات الحساب */}
-            {activeTab === "account" && <AccountSeting />}
+              {/* المظهر واللغة */}
+              {activeTab === "appearance" && <AppearanceSetting />}
 
-            {/* المظهر واللغة */}
-            {activeTab === "appearance" && <AppearanceSetting />}
+              {/* الإشعارات */}
+              {activeTab === "notifications" && <NotificationsSetting />}
 
-            {/* الإشعارات */}
-            {activeTab === "notifications" && <NotificationsSetting />}
-
-            {/* الفواتير */}
-            {activeTab === "billing" && <BillingSetting />}
-          </div>
+              {/* الفواتير */}
+              {activeTab === "billing" && <BillingSetting />}
+            </div>
+          </Suspense>
         </div>
       </div>
     </div>
